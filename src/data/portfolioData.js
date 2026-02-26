@@ -103,7 +103,7 @@ export const portfolioData = {
         {
             title: "Beer Clicker",
             description: "Application web type 'Cookie Clicker' sur le thème de la bière.",
-            image: "public/beer-clicker.png",
+            image: "/beer-clicker.png",
             tags: ["ReactJS", "LocalStorage", "CSS"],
             githubUrl: "https://github.com/kuru05/beer-clicker",
             liveUrl: "https://beer-clicker-three.vercel.app",
@@ -111,7 +111,7 @@ export const portfolioData = {
         {
             title: "E-Commerce WebSite",
             description: "Site e-commerce avec gestion des commandes, dans le cadre de ma formation de BTS.",
-            image: "public/ecommerce-orders-warehouse-analytics.jpg",
+            image: "/ecommerce-orders-warehouse-analytics.jpg",
             tags: ["PHP", "MySQL", "CSS", "Bootstrap"],
             githubUrl: "https://github.com/kuru05/e6-leger",
             liveUrl: "https://merlin-e6.formationsio.fr/"
@@ -119,7 +119,7 @@ export const portfolioData = {
         {
             title: "Ancien Portfolio",
             description: "Quelques anciens projets réalisés lors de ma formation de BTS.",
-            image: "public/portfolio.webp",
+            image: "/portfolio.webp",
             tags: ["HTML", "CSS", "JavaScript"],
             liveUrl: "https://merlin.formationsio.fr/",
         },
@@ -128,7 +128,7 @@ export const portfolioData = {
             title: "Admin Dashboard App for E-Commerce",
             description: "Tableau de bord pour la gestion des commandes, des produits et des utilisateurs, en lien avec le site e-commerce.",
             image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
-            tags: ["C#", "", "MySQL", "CSS", "Bootstrap"],
+            tags: ["C#", "MySQL", "CSS", "Bootstrap"],
             githubUrl: "https://github.com/kuru05/e6-lourd",
             liveUrl: "https://github.com/kuru05/e6-lourd",
         },
