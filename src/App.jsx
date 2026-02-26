@@ -7,7 +7,6 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { portfolioData } from './data/portfolioData'
 
-// Mappage section ID → composant React
 const sectionComponents = {
     hero: Hero,
     skills: Skills,
@@ -16,12 +15,11 @@ const sectionComponents = {
 }
 
 const App = () => {
-    // Filtre les sections activées et les rend dans l'ordre défini dans portfolioData
     const enabledSections = portfolioData.sections.filter((s) => s.enabled)
 
     return (
         <ThemeProvider>
-            <div className="min-h-screen bg-bgbase noise-overlay relative">
+            <div className="min-h-screen">
                 <Navbar />
                 <main>
                     {enabledSections.map((section) => {

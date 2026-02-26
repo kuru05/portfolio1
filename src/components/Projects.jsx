@@ -6,53 +6,52 @@ const Projects = () => {
     const { projects, projectsSection } = portfolioData
 
     return (
-        <section id="projects" className="py-24 lg:py-32 relative">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section header */}
+        <section id="projects" className="py-24 border-t border-brd/20">
+            <div className="max-w-5xl mx-auto px-6">
+                {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    className="mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                        <span className="gradient-text">{projectsSection.title}</span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-txt mb-3">
+                        {projectsSection.title}
                     </h2>
-                    <p className="text-txt-muted max-w-2xl mx-auto text-lg">
+                    <p className="text-txt-muted max-w-xl">
                         {projectsSection.subtitle}
                     </p>
                 </motion.div>
 
-                {/* Projects grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     {projects.map((project, index) => (
                         <motion.article
                             key={project.title}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.08 }}
-                            viewport={{ once: true, margin: '-60px' }}
-                            className="group rounded-2xl glass-card overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5"
+                            transition={{ duration: 0.4, delay: index * 0.06 }}
+                            viewport={{ once: true, margin: '-40px' }}
+                            className="group rounded-xl bg-surface/50 border border-brd/30 overflow-hidden hover:border-brd/60 transition-colors"
                         >
                             {/* Image */}
                             <div className="relative overflow-hidden aspect-video">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-bgbase/90 via-bgbase/20 to-transparent" />
 
-                                {/* Overlay links */}
-                                <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                                {/* Links overlay */}
+                                <div className="absolute inset-0 bg-bgbase/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-3">
                                     {project.githubUrl && (
                                         <a
                                             href={project.githubUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-2.5 rounded-xl bg-surface/80 backdrop-blur-sm text-txt-muted hover:text-primary border border-brd/30 transition-colors"
+                                            className="p-2.5 rounded-lg bg-surface border border-brd/50 text-txt-muted hover:text-txt transition-colors"
                                             aria-label={`GitHub - ${project.title}`}
                                         >
                                             <Github size={16} />
@@ -63,8 +62,8 @@ const Projects = () => {
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="p-2.5 rounded-xl bg-surface/80 backdrop-blur-sm text-txt-muted hover:text-primary border border-brd/30 transition-colors"
-                                            aria-label={`Live demo - ${project.title}`}
+                                            className="p-2.5 rounded-lg bg-surface border border-brd/50 text-txt-muted hover:text-txt transition-colors"
+                                            aria-label={`Demo - ${project.title}`}
                                         >
                                             <ExternalLink size={16} />
                                         </a>
@@ -73,20 +72,19 @@ const Projects = () => {
                             </div>
 
                             {/* Content */}
-                            <div className="p-5 lg:p-6">
-                                <h3 className="text-lg font-semibold text-txt mb-2 group-hover:text-primary transition-colors duration-300">
+                            <div className="p-5">
+                                <h3 className="font-semibold text-txt mb-2">
                                     {project.title}
                                 </h3>
-                                <p className="text-sm text-txt-muted leading-relaxed mb-4 line-clamp-3">
+                                <p className="text-sm text-txt-muted leading-relaxed mb-4 line-clamp-2">
                                     {project.description}
                                 </p>
 
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-1.5">
                                     {project.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="px-2.5 py-1 text-xs font-medium rounded-lg bg-primary/10 text-primary border border-primary/15"
+                                            className="px-2 py-0.5 text-xs text-txt-muted bg-brd/15 rounded"
                                         >
                                             {tag}
                                         </span>

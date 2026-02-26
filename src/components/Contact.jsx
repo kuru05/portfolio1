@@ -11,21 +11,17 @@ const Contact = () => {
         email: '',
         message: '',
     })
-    const [status, setStatus] = useState(null) // 'success' | 'error' | null
+    const [status, setStatus] = useState(null)
 
     const handleChange = (e) => {
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
     }
 
-    // ─── Submit handler ────────────────────────────────────────
-    // Branchez ici Formspree, EmailJS ou tout autre service.
-    // Exemple Formspree : remplacez le fetch par
-    //   fetch("https://formspree.io/f/VOTRE_ID", { method:"POST", body: formData })
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             console.log('Form submitted:', formData)
-            // TODO: Remplacez par votre appel API ici
+            // TODO: Branchez Formspree, EmailJS etc. ici
             setStatus('success')
             setFormData({ name: '', email: '', message: '' })
             setTimeout(() => setStatus(null), 4000)
@@ -35,42 +31,39 @@ const Contact = () => {
         }
     }
 
-    return (
-        <section id="contact" className="py-24 lg:py-32 relative">
-            {/* Background */}
-            <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.02] to-transparent" />
-            </div>
+    const inputBase =
+        'w-full px-4 py-3 pl-11 bg-bgbase border border-brd/30 rounded-lg text-txt text-sm placeholder:text-txt-muted/40 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors'
 
-            <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section header */}
+    return (
+        <section id="contact" className="py-24 border-t border-brd/20">
+            <div className="max-w-xl mx-auto px-6">
+                {/* Header */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true, margin: '-100px' }}
-                    className="text-center mb-12"
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    className="mb-10"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-                        <span className="gradient-text">{contact.heading}</span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-txt mb-3">
+                        {contact.heading}
                     </h2>
-                    <p className="text-txt-muted max-w-xl mx-auto text-lg">
+                    <p className="text-txt-muted">
                         {contact.subheading}
                     </p>
                 </motion.div>
 
-                {/* Form card */}
+                {/* Form */}
                 <motion.form
                     onSubmit={handleSubmit}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
                     viewport={{ once: true }}
-                    className="p-6 sm:p-8 lg:p-10 rounded-2xl glass-card space-y-6"
+                    className="space-y-5"
                 >
-                    {/* Name */}
-                    <div className="relative group">
-                        <User size={18} className="absolute left-4 top-4 text-txt-muted group-focus-within:text-primary transition-colors" />
+                    <div className="relative">
+                        <User size={16} className="absolute left-3.5 top-3.5 text-txt-muted/50" />
                         <input
                             type="text"
                             name="name"
@@ -78,13 +71,12 @@ const Contact = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3.5 pl-12 bg-bgbase/80 border border-brd/40 rounded-xl text-txt placeholder:text-txt-muted/50 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/15 transition-all"
+                            className={inputBase}
                         />
                     </div>
 
-                    {/* Email */}
-                    <div className="relative group">
-                        <Mail size={18} className="absolute left-4 top-4 text-txt-muted group-focus-within:text-primary transition-colors" />
+                    <div className="relative">
+                        <Mail size={16} className="absolute left-3.5 top-3.5 text-txt-muted/50" />
                         <input
                             type="email"
                             name="email"
@@ -92,13 +84,12 @@ const Contact = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3.5 pl-12 bg-bgbase/80 border border-brd/40 rounded-xl text-txt placeholder:text-txt-muted/50 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/15 transition-all"
+                            className={inputBase}
                         />
                     </div>
 
-                    {/* Message */}
-                    <div className="relative group">
-                        <MessageSquare size={18} className="absolute left-4 top-4 text-txt-muted group-focus-within:text-primary transition-colors" />
+                    <div className="relative">
+                        <MessageSquare size={16} className="absolute left-3.5 top-3.5 text-txt-muted/50" />
                         <textarea
                             name="message"
                             placeholder={contact.messagePlaceholder}
@@ -106,37 +97,23 @@ const Contact = () => {
                             onChange={handleChange}
                             rows={5}
                             required
-                            className="w-full px-4 py-3.5 pl-12 bg-bgbase/80 border border-brd/40 rounded-xl text-txt placeholder:text-txt-muted/50 focus:outline-none focus:border-primary/50 focus:ring-2 focus:ring-primary/15 transition-all resize-none"
+                            className={`${inputBase} resize-none`}
                         />
                     </div>
 
-                    {/* Submit */}
                     <button
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl gradient-btn text-base"
+                        className="w-full flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium rounded-lg bg-primary text-bgbase hover:bg-primary/90 transition-colors"
                     >
-                        <Send size={18} />
+                        <Send size={16} />
                         {contact.submitLabel}
                     </button>
 
-                    {/* Status feedback */}
                     {status === 'success' && (
-                        <motion.p
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-center text-sm text-emerald-400"
-                        >
-                            {contact.successMessage}
-                        </motion.p>
+                        <p className="text-center text-sm text-emerald-400">{contact.successMessage}</p>
                     )}
                     {status === 'error' && (
-                        <motion.p
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="text-center text-sm text-red-400"
-                        >
-                            {contact.errorMessage}
-                        </motion.p>
+                        <p className="text-center text-sm text-red-400">{contact.errorMessage}</p>
                     )}
                 </motion.form>
             </div>
