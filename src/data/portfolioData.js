@@ -49,7 +49,7 @@ export const portfolioData = {
     hero: {
         greeting: "Bonjour, je suis",
         description:
-            "Passionné par le développement web depuis plus de 5 ans, je crée des applications qui allient design soigné et code robuste. Toujours à la recherche de nouveaux défis techniques.",
+            "Passionné par le développement d'applications depuis plus de 5 ans, je crée des applications qui allient design soigné et code robuste. Toujours à la recherche de nouveaux défis techniques.",
         cta: {
             label: "Voir mes projets",
             href: "#projects",
@@ -58,7 +58,6 @@ export const portfolioData = {
 
     skillsSection: {
         title: "Compétences",
-        subtitle: "Les technologies et outils que j'utilise au quotidien pour donner vie à vos projets.",
     },
 
     skills: [
@@ -69,7 +68,6 @@ export const portfolioData = {
                 { name: "React.js", level: 90 },
                 { name: "TypeScript", level: 80 },
                 { name: "Tailwind CSS", level: 70 },
-                { name: "Next.js", level: 80 },
                 { name: "Vue.js", level: 70 },
             ],
         },
@@ -90,7 +88,6 @@ export const portfolioData = {
             items: [
                 { name: "Git", level: 90 },
                 { name: "Docker", level: 70 },
-                { name: "CI/CD", level: 70 },
                 { name: "Figma", level: 80 },
                 { name: "Linux", level: 95 },
             ],
@@ -99,25 +96,10 @@ export const portfolioData = {
 
     projectsSection: {
         title: "Projets",
-        subtitle: "Une sélection de projets récents qui reflètent mes compétences et ma passion pour le développement.",
+        subtitle: "Une sélection de projets récents qui reflètent ma passion pour le développement.",
     },
 
     projects: [
-        {
-            title: "E-Commerce WebSite",
-            description: "Site e-commerce avec gestion des commandes, dans le cadre de ma formation de BTS.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-            tags: ["PHP", "MySQL", "CSS", "Bootstrap"],
-            githubUrl: "https://github.com/kuru05/e6-leger",
-            liveUrl: "https://merlin-e6.formationsio.fr/"
-        },
-        {
-            title: "Ancien Portfolio",
-            description: "Quelques anciens projets réalisés lors de ma formation de BTS.",
-            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-            tags: ["HTML", "CSS", "JavaScript"],
-            liveUrl: "https://merlin.formationsio.fr/",
-        },
         {
             title: "Beer Clicker",
             description: "Application web type 'Cookie Clicker' sur le thème de la bière.",
@@ -127,12 +109,28 @@ export const portfolioData = {
             liveUrl: "https://beer-clicker-three.vercel.app",
         },
         {
+            title: "E-Commerce WebSite",
+            description: "Site e-commerce avec gestion des commandes, dans le cadre de ma formation de BTS.",
+            image: "public/ecommerce-orders-warehouse-analytics.jpg",
+            tags: ["PHP", "MySQL", "CSS", "Bootstrap"],
+            githubUrl: "https://github.com/kuru05/e6-leger",
+            liveUrl: "https://merlin-e6.formationsio.fr/"
+        },
+        {
+            title: "Ancien Portfolio",
+            description: "Quelques anciens projets réalisés lors de ma formation de BTS.",
+            image: "public/portfolio.webp",
+            tags: ["HTML", "CSS", "JavaScript"],
+            liveUrl: "https://merlin.formationsio.fr/",
+        },
+
+        {
             title: "Admin Dashboard App for E-Commerce",
             description: "Tableau de bord pour la gestion des commandes, des produits et des utilisateurs, en lien avec le site e-commerce.",
             image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
             tags: ["C#", "", "MySQL", "CSS", "Bootstrap"],
             githubUrl: "https://github.com/kuru05/e6-lourd",
-            liveUrl: "https://merlin-e6.formationsio.fr/",
+            liveUrl: "https://github.com/kuru05/e6-lourd",
         },
     ],
 
