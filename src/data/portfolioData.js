@@ -25,7 +25,7 @@ export const portfolioData = {
         name: "Merlin COUDOL",
         title: "Coordinateur de Projets informatiques",
         tagline: "Je conçois des expériences web modernes, performantes et accessibles.",
-        resumeUrl: "/cv-alex-dupont.pdf",       // Place ton CV dans /public
+        resumeUrl: "/20260211_CV_Merlin_COUDOL.pdf",       // Place ton CV dans /public
         profileImage: "/Photo.webp",
         // Suffixe du logo dans la navbar (ex: "Alex.dev")
         logoDomain: ".dev",
