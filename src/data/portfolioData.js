@@ -132,6 +132,20 @@ export const portfolioData = {
             githubUrl: "https://github.com/kuru05/e6-lourd",
             liveUrl: "https://github.com/kuru05/e6-lourd",
         },
+        {
+            title: "Kuru's Airsofts — E-Commerce Fullstack",
+            description: "Plateforme e-commerce fullstack spécialisée Airsoft : API REST Symfony, frontend React, authentification JWT, gestion de stock et panel admin.",
+            image: "/fullstack-airsoft.png",
+            tags: ["React", "Symfony", "MySQL", "JWT", "Tailwind CSS"],
+            githubUrl: "https://github.com/kuru05/fullstack-project",
+        },
+        {
+            title: "Java Course",
+            description: "Exercices et projets Java réalisés en cours : structures de données, algorithmes, programmation orientée objet.",
+            image: "/java-course.png",
+            tags: ["Java", "OOP", "Algorithmes"],
+            githubUrl: "https://github.com/kuru05/java-course",
+        },
     ],
 
 
